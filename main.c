@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 02:32:17 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 02:51:53 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,20 @@
 int main(int argc, char **argv)
 {
 	t_stack *stacks;
+	int		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strchr(argv[i], ' '))
+		{
+			
+		}
+		else
+		{
+			
+		}
+		i++;
+	}
+	
 }

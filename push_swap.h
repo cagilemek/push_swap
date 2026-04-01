@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 02:05:55 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 02:58:04 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ typedef struct s_stack
 }	t_stack;
 
 void	ft_lstadd_back(t_list **lst, t_list *new);
+
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+
+int		is_valid(char *number);
+
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);
 void	ss(t_stack *stk);
