@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:38:37 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 02:17:39 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 05:07:30 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	sa(t_stack *stk)
 	{
 		write(1, "sa\n", 3);
 		stk->count.sa++;
+		stk->count.total++;
 	}
 }
 
@@ -54,4 +55,5 @@ void	ss(t_stack *stk)
 	s(&stk->b);
 	write(1, "ss\n", 3);
 	stk->count.ss++;//BURAYI TARTIŞIN BENCE DOĞRU -Ç
+	stk->count.total++;
 }

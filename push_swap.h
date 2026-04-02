@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 04:40:07 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 05:07:35 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int		is_duplicate(t_list *lst);
 void	give_index(t_list *a);
 int		is_order(t_list *a);
 void	cleanup(t_stack *stacks, char **split);
+
+void	init_counts(t_stack *stk);
 
 
 void	sa(t_stack *stk);

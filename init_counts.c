@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sifirlama.c                                        :+:      :+:    :+:   */
+/*   init_counts.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 04:22:39 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 04:23:16 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 05:04:32 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    init_counts(t_stack *stk)
+void	init_counts(t_stack *stk)
 {
 	stk->count.sa = 0;
 	stk->count.sb = 0;
