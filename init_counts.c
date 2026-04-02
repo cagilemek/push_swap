@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_push.c                                  :+:      :+:    :+:   */
+/*   sifirlama.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 00:39:12 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 03:47:54 by ckurtul          ###   ########.fr       */
+/*   Created: 2026/04/02 04:22:39 by ckurtul           #+#    #+#             */
+/*   Updated: 2026/04/02 04:23:16 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack *stk)
+void    init_counts(t_stack *stk)
 {
-	t_list	*node;
-
-	if (!stk->b)
-		return ;
-	node = stk->b;
-	stk->b = stk->b->next;
-	node->next = stk->a;
-	stk->a = node;
-	write(1, "pa\n", 3);
-	stk->count.pa++;
-	stk->count.total++;
-}
-
-void	pb(t_stack *stk)
-{
-	t_list	*node;
-
-	if (!stk->a)
-		return ;
-	node = stk->a;
-	stk->a = stk->a->next;
-	node->next = stk->b;
-	stk->b = node;
-	write(1, "pb\n", 3);
-	stk->count.pb++;
-	stk->count.total++;
+	stk->count.sa = 0;
+	stk->count.sb = 0;
+	stk->count.ss = 0;
+	stk->count.pa = 0;
+	stk->count.pb = 0;
+	stk->count.ra = 0;
+	stk->count.rb = 0;
+	stk->count.rr = 0;
+	stk->count.rra = 0;
+	stk->count.rrb = 0;
+	stk->count.rrr = 0;
+	stk->count.total = 0;
 }

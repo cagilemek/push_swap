@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   operations_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:40:19 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 02:14:42 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 03:47:37 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ra(t_stack *stk)
 	{
 		write(1, "ra\n", 3);
 		stk->count.ra++;
+		stk->count.total++;
 	}
 }
 
@@ -46,6 +47,7 @@ void	rb(t_stack *stk)
 	{
 		write(1, "rb\n", 3);
 		stk->count.rb++;
+		stk->count.total++;
 	}
 }
 
@@ -57,4 +59,5 @@ void	rr(t_stack *stk)
 	r(&stk->b);
 	write(1, "rr\n", 3);
 	stk->count.rr++;
+	stk->count.total++;
 }

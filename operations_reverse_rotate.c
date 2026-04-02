@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   operations_reverse_rotate.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:41:18 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 02:15:40 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 03:47:45 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	rra(t_stack *stk)
 	{
 		write(1, "rra\n", 4);
 		stk->count.rra++;
+		stk->count.total++;
 	}
 }
 void	rrb(t_stack *stk)
@@ -47,6 +48,7 @@ void	rrb(t_stack *stk)
 	{
 		write(1, "rrb\n", 4);
 		stk->count.rrb++;
+		stk->count.total++;
 	}
 }
 
@@ -58,4 +60,5 @@ void	rrr(t_stack *stk)
 	rr_helper(&stk->b);
 	write(1, "rrr\n", 4);
 	stk->count.rrr++;
+	stk->count.total++;
 }

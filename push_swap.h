@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 02:58:04 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 04:22:13 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <unistd.h>
+#include <string.h>
 
 typedef struct s_list
 {
@@ -35,6 +36,7 @@ typedef struct s_count
 	int	rrb;
 	int	rrr;
 	int total;
+	
 }	t_count;
 
 typedef struct s_stack
@@ -51,6 +53,7 @@ char	*ft_strchr(const char *s, int c);
 
 int		is_valid(char *number);
 
+void	init_counts(t_stack *stk);
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);
 void	ss(t_stack *stk);
