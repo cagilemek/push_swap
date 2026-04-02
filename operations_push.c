@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:39:12 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 03:47:54 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 04:30:27 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	pa(t_stack *stk)
 	stk->a = node;
 	write(1, "pa\n", 3);
 	stk->count.pa++;
-	stk->count.total++;
 }
 
 void	pb(t_stack *stk)
@@ -39,5 +38,4 @@ void	pb(t_stack *stk)
 	stk->b = node;
 	write(1, "pb\n", 3);
 	stk->count.pb++;
-	stk->count.total++;
 }

@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 04:22:13 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/02 04:40:07 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <unistd.h>
-#include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
@@ -36,7 +37,6 @@ typedef struct s_count
 	int	rrb;
 	int	rrr;
 	int total;
-	
 }	t_count;
 
 typedef struct s_stack
@@ -46,14 +46,24 @@ typedef struct s_stack
 	t_count	count;
 }	t_stack;
 
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	free_split(char **split);
 
+void	error(t_stack *stacks, char **split);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
+t_list	*new_node(int value);
 
+long	ft_atol(const char *nptr);
 int		is_valid(char *number);
+int		is_duplicate(t_list *lst);
 
-void	init_counts(t_stack *stk);
+void	give_index(t_list *a);
+int		is_order(t_list *a);
+void	cleanup(t_stack *stacks, char **split);
+
+
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);
 void	ss(t_stack *stk);
