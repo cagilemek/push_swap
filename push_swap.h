@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 05:07:35 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 19:04:13 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ typedef struct s_stack
 	t_list	*a;
 	t_list	*b;
 	t_count	count;
+	int		bench;
+	int		flag;
+	int		flagset;
 }	t_stack;
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -62,8 +65,10 @@ int		is_duplicate(t_list *lst);
 void	give_index(t_list *a);
 int		is_order(t_list *a);
 void	cleanup(t_stack *stacks, char **split);
+int		ft_strcmp(const char *s1, const char *s2);
 
 void	init_counts(t_stack *stk);
+void	parse_flag(t_stack *stacks, char *argv, char **split);
 
 
 void	sa(t_stack *stk);

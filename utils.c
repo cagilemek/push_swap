@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 01:54:20 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 04:39:59 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 19:02:48 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ char	*ft_strchr(const char *s, int c)
 
 int	is_valid(char *number)
 {
-	
+	if (!*number)//"" " " bos string için
+		return (0);
 	if (*number == '+' || *number == '-')
 		number++;
-	if (!*number)
+	if (!*number)// + veya - den sonra sayı yoksa diye kontrol
 		return (0);
 	while (*number)
 	{
@@ -97,10 +98,26 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)// split için
 	return (dest);
 }
 
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+
 void free_split(char **split)
 {
 	int i;
 
+	if (!split)
+		return ;
 	i = 0;
 	while (split[i])
 	{

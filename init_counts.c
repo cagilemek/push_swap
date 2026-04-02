@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 04:22:39 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:04:32 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 19:04:17 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ void	init_counts(t_stack *stk)
 	stk->count.rrb = 0;
 	stk->count.rrr = 0;
 	stk->count.total = 0;
+	stk->bench = 0;
+	stk->flag = 0;
+	stk->flagset = 0;
 }

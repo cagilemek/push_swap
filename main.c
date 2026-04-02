@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:11:10 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 19:19:35 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int main(int argc, char **argv)
 	init_counts(stacks);// tüm işlem sayaclarını baslatır
 	while (i < argc)// bütün argümanları gez PARSİNG
 	{
-		if (ft_strchr(argv[i], ' ')) // 1. argümanda bosluk var mı diye kontrol et yani "" içinde mi
+		if (argv[i][0] == '-' && argv[i][1] == '-')// flag kontrolü
+			parse_flag(stacks, argv[i], split);
+		else if (ft_strchr(argv[i], ' ')) // 1. argümanda bosluk var mı diye kontrol et yani "" içinde mi
 		{
 			split = ft_split(argv[i], ' ');
 			j = 0;
@@ -48,6 +50,8 @@ int main(int argc, char **argv)
 					error (stacks, split);
 				j++;
 			}
+			free_split(split);// iki tane "1 2" 9 "3 4" split gerekirse diye ilk splitte leak olmaması içn
+			split = NULL;// burda istemiyorsan fonksiyon *** olacak
 		}
 		else // argüman "" degilse
 		{
@@ -62,8 +66,10 @@ int main(int argc, char **argv)
 		}
 		i++;
 	}
-	give_index(stacks->a);//free kısmı
-	if(is_order(stacks->a))
+	give_index(stacks->a);
+	if (!stacks->a)// ./program " " verilirse split null oluyor ve isvalid çağırılmıyor stack bos ise kontrolü
+		error(stacks, split);// is order dan önce gerekli yoksa bos liste hatalı davranısa yol açıyor
+	if(is_order(stacks->a))// zaten sıralı mı ?
 	{
 		cleanup(stacks, split);
 		return (0);
