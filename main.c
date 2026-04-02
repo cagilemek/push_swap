@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:08:39 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/02 05:11:10 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	stacks->b = NULL;
 	split = NULL;
 	i = 1;
-	init_counts(stacks);
+	init_counts(stacks);// tüm işlem sayaclarını baslatır
 	while (i < argc)// bütün argümanları gez PARSİNG
 	{
 		if (ft_strchr(argv[i], ' ')) // 1. argümanda bosluk var mı diye kontrol et yani "" içinde mi
