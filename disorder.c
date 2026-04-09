@@ -6,54 +6,49 @@
 /*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:19:00 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 20:06:30 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/08 23:53:48 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float disorder (int *atol, int size)
+float disorder (t_list *head)
 {
 	float	mistakes;
-	float total_pairs;
-	int i;
-	int j;
+	float	total_pairs;
+	t_list	*current;//stacki tutuyo
+	t_list	*runner;//bir sonraki stacki tutuyor
 	
+	current = head;
 	mistakes = 0;
 	total_pairs = 0;
-	i = 0; // i ve j de sırayla sayıları tutuyor liste sıralı mı diye kontrol etmek için
-	j = 0;
 	
-	if(size <= 1)
+	if(!current)
 		return(0);
-	while(i < size -1)
+	while(current)
 	{
-		j = i + 1;
-		while (j < size)
+		runner = current->next;//bağlıyoruz birbirine
+		while (runner)
 		{
 			total_pairs += 1;
-			if(atol[i] > atol[j]) // atol tek tek kontrol ettiği için kullanıyoruz split kullanmadık çünkü split char onu castlemekle uğraşmamız gerekirdi
+			if(current->value > runner->value)//değer kontrolü yapıyoruz elemanlar birbirinden büyük mü 
 				mistakes += 1;
-			j++;
+			runner = runner->next;
 		}
-		i++;
+		current = current->next;
 	}
 	return(mistakes/total_pairs); //burda oranı buluyoruz
 }
 
-void strategy_selector (int *arr, int size)
+void strategy_selector(t_stack *stacks)
 {
-	float d;
-	
-	d = disorder(arr, size);
+	float	rate;
 
-	if (d == 0) // just seçim
-		return;
-	else if (d < 0.2)
-		simple_sort(arr, size);
-	else if (d >= 0.2 && d <= 0.5)
-		medium_sort(arr, size);
+	rate = disorder(stacks->a);// SADECE A YA BAKIYORUZ ANLAMADIM KAFAM ÇOK KARIŞTI B YE DE BAKMAMIZ GEREKMEZ Mİ BİLMİYORUM İMDAT
+	if (rate < 0.2)
+		sort_small(stacks);
+	else if (rate < 0.5)
+		sort_medium(stacks);
 	else
-		complex_sort(arr, size);
-
+		sort_large(stacks);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 19:19:35 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/09 00:00:53 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,7 @@ int main(int argc, char **argv)
 		cleanup(stacks, split);
 		return (0);
 	}
-
-
+	strategy_selector(stacks);
 	cleanup(stacks, split);
 	return (0);
 }

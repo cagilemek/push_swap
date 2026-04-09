@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 19:04:13 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/08 23:57:15 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ int		ft_strcmp(const char *s1, const char *s2);
 
 void	init_counts(t_stack *stk);
 void	parse_flag(t_stack *stacks, char *argv, char **split);
+float	disorder (t_list *head);
+void	strategy_selector(t_stack *stacks);
+
+
 
 
 void	sa(t_stack *stk);

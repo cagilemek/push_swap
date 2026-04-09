@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 01:54:20 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/02 19:02:48 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/09 03:31:19 by ckurtul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,16 +183,25 @@ int	is_duplicate(t_list *lst)
 	return (0);
 }
 
-void	give_index(t_list *a)
+void give_index(t_list *a)
 {
-	int	index;
+	t_list	*current;
+	t_list	*runner;
+	int		index;
 
-	index = 0;
-	while (a)
+	current = a;
+	while (current)
 	{
-		a->index = index;
-		index++;
-		a = a->next;
+		index = 0;
+		runner = a;
+		while (runner)
+		{
+			if (runner->value < current->value)
+				index++;
+			runner = runner->next;
+		}
+		current->index = index;
+		current = current->next;
 	}
 }
 
