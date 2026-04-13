@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 01:54:20 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/09 03:31:19 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/13 21:04:50 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int	is_valid(char *number)
+int	is_valid(char *number)//geçerli bir sayi mi
 {
 	if (!*number)//"" " " bos string için
 		return (0);
@@ -171,14 +171,13 @@ int	is_duplicate(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->next;
-		while (tmp)
+		while (tmp)//listenin ilk elemanı ile kalan tüm elemanları kaysılastır
 		{
 			if (lst->value == tmp->value)
 				return (1);
 			tmp = tmp->next;
 		}
-		
-		lst = lst->next;
+		lst = lst->next;//listenin 2. elemanına geç
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:19:00 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/08 23:53:48 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/13 21:23:28 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ float disorder (t_list *head)
 				mistakes += 1;
 			runner = runner->next;
 		}
-		current = current->next;
+		current = current->next;//teker teker tüm elemanlar ile kıyas
 	}
-	return(mistakes/total_pairs); //burda oranı buluyoruz
+	return(mistakes/total_pairs); //burda oranı buluyoruz önce küçük sayı oldugu için 1 den düşük cıkıyor ör 1/2 = 0.5
 }
 
 void strategy_selector(t_stack *stacks)
