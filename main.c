@@ -6,15 +6,15 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/13 21:04:47 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:32:41 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stacks;
+	t_stack	*stacks;
 	char	**split;
 	long	n;//split ile aldıgmız argümanı atol ile n de tutuyoruz
 	int		j;//split ettigimiz "1 2 3" gibi tırnak içindeki 1 2 3 arasında gezebilmek için
@@ -56,10 +56,10 @@ int main(int argc, char **argv)
 		else // argüman tırnak içinde degilse
 		{
 			if (!is_valid(argv[i])) // sayı mı kontrolü
-					error(stacks, split);
+				error(stacks, split);
 			n = ft_atol(argv[i]);
 			if (n > 2147483647 || n < -2147483648)
-					error(stacks, split);
+				error(stacks, split);
 			ft_lstadd_back(&stacks->a, new_node((int)n));
 			if (is_duplicate(stacks->a))// aynı sayı tekrarı kontolü
 				error (stacks, split);
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 	give_index(stacks->a);
 	if (!stacks->a)// (  ./program " "  ) verilirse split null oluyor ve isvalid çağırılmıyor döngüye girmiyor stack bos ise kontrolü
 		error(stacks, split);// is order dan önce gerekli yoksa bos liste hatalı davranısa yol açıyor
-	if(is_order(stacks->a))// zaten sıralı mı ?
+	if (is_order(stacks->a))// zaten sıralı mı ?
 	{
 		cleanup(stacks, split);
 		return (0);

@@ -6,17 +6,16 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:41:18 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:07:11 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:23:25 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-static int  rr_helper(t_list **stack)
+static int	rr_helper(t_list **stack)
 {
-	t_list  *tmp;
-	t_list  *last;
+	t_list	*tmp;
+	t_list	*last;
 
 	if (!*stack || !(*stack)->next)
 		return (0);
@@ -42,6 +41,7 @@ void	rra(t_stack *stk)
 		stk->count.total++;
 	}
 }
+
 void	rrb(t_stack *stk)
 {
 	if (rr_helper(&stk->b))

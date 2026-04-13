@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 03:22:39 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/09 19:14:43 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:21:30 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,4 @@ void fin_min_index_pos(t_list *a, int *min_index, int *min_pos)
 		i++;
 	}
 }
-void move_to_top()
+void move_to_top();

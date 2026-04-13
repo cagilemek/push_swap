@@ -6,13 +6,13 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:40:19 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:07:22 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:24:06 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int  r(t_list **stack)
+static int	r(t_list **stack)
 {
 	// t_list *head;
 	// head = ilk elemanı tutan pointer
@@ -20,7 +20,7 @@ static int  r(t_list **stack)
 	//  b = head ın adesi 0x100			 = &head
 	//  *b = kafa node u gösteren pointer yani = head 
 	//  **b = ilk node nin kendisi			  = *head
-	t_list *node;
+	t_list	*node;
 
 	if (!*stack || !(*stack)->next)
 		return (0);

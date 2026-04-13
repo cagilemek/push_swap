@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:38:37 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/02 05:07:30 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:24:21 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sa(t_stack *stk)
 void	sb(t_stack *stk)
 {
 	if (s(&stk->b))
-{
+	{
 		write(1, "sb\n", 3);
 		stk->count.sb++;
 		stk->count.total++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/08 23:57:15 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/04/13 22:28:56 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_count
 	int	rra;
 	int	rrb;
 	int	rrr;
-	int total;
+	int	total;
 }	t_count;
 
 typedef struct s_stack
@@ -69,11 +69,8 @@ int		ft_strcmp(const char *s1, const char *s2);
 
 void	init_counts(t_stack *stk);
 void	parse_flag(t_stack *stacks, char *argv, char **split);
-float	disorder (t_list *head);
+float	disorder(t_list *head);
 void	strategy_selector(t_stack *stacks);
-
-
-
 
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);
@@ -86,7 +83,5 @@ void	rr(t_stack *stk);
 void	rra(t_stack *stk);
 void	rrb(t_stack *stk);
 void	rrr(t_stack *stk);
-
-
 
 #endif
