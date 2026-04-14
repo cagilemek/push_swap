@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:37:25 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/14 04:02:16 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/14 05:41:51 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	pull_chunk(t_stack *stk, int stack_size, int chunk_size, int last_chunk)
 				push++;
 			}
 			else//degilse sırayı kaydır
-				rb(stk);
+				smart_rotate(stk, max_index);
 		}
 		last_chunk--;//bir alt chunk
 	}
@@ -91,7 +91,7 @@ int	calculate_chunk_size(int stack_size)//chunk boyutunu hesapla n kök n
 {
 	int	i;//chunk sayısını tutucak
 
-	i = 1; //0 * 0 == 0
+	i = 1; //çünkü 0 * 0 == 0
 	while (i * i < stack_size)// 1*1 < 10? ..... 4*4 < 10?
 		i++;
 	return (i);
