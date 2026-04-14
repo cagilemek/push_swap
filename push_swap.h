@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/14 01:52:14 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/14 04:49:40 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,13 @@ void	init_counts(t_stack *stk);
 void	parse_flag(t_stack *stacks, char *argv, char **split);
 float	disorder(t_list *head);
 void	strategy_selector(t_stack *stacks);
+
+//chunk base
+void	chunk_base(t_stack *stk);
+int		push_chunk(t_stack *stk, int stack_size, int chunk_size);
+void	pull_chunk(t_stack *stk, int stack_size, int chunk_size, int last_chunk);
+int		calculate_stack_size(t_list *stack);
+int		calculate_chunk_size(int stack_size);
 
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);

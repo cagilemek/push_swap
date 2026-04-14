@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:19:00 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/14 02:03:31 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/14 04:49:13 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ float	disorder(t_list *head)
 	current = head;
 	mistakes = 0;
 	total_pairs = 0;
-
+	
 	if (!current)
 		return (0);
 	while (current)
