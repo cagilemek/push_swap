@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/15 17:09:11 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/20 23:35:26 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include "printf.h"
 
 typedef struct s_list
 {
@@ -44,9 +45,10 @@ typedef struct s_stack
 	t_list	*a;
 	t_list	*b;
 	t_count	count;
+	float	disorder;//karışıklık ornaını tutuyor ör. 0.42
 	int		bench;
 	int		flag;
-	int		flagset;
+	int		flagset;//birden fazla flag girilmesin diye
 }	t_stack;
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -64,7 +66,7 @@ int		is_duplicate(t_list *lst);
 
 void	give_index(t_list *a);
 int		is_order(t_list *a);
-void	cleanup(t_stack *stacks, char **split);
+int		cleanup(t_stack *stacks, char **split);
 int		ft_strcmp(const char *s1, const char *s2);
 
 void	init_counts(t_stack *stk);
@@ -82,10 +84,9 @@ int		calculate_chunk_size(int stack_size);
 int		find_max_index_pos(t_list *b, int max_index);
 void	smart_rotate(t_stack *stk, int max_index);
 
-void	bench_press(t_stack *s);
-void	print_line(char *name, int value);
-int		ft_strlen(char *str);
-void	ft_putnbr_fd(int value, int fd);
+void	bench_press(t_stack *s, float f);
+int		ft_printf(const char *format, ...);
+void	disorder_to_integer(int *integer, float *flo, int *decimal, float f);
 
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);
