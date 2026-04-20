@@ -1,33 +1,43 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   simple.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/09 03:22:39 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/14 05:53:38 by mucelep          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	simple(t_stack *stk)
+void move_to_top(t_stack *stk, int pos)
 {
-	int	min_index;
-	int	min_pos;
+	int size;
 
-	give_index(stk->a);//head i değiştirimiyor sadece mevcut node un içini değiştiriyor o yüzden tek pointer
+	if (pos < 0)
+		return;
+	size = calculate_stack_size(stk->a);
+	if (pos <= size / 2)
+	{
+		while (pos > 0)
+		{
+			ra(stk);
+			pos--;
+		}
+	}
+	else
+	{
+		pos = size - pos;
+		while (pos > 0)
+		{
+			rra(stk);
+			pos--;
+		}
+	}
+}
+
+void simple(t_stack *stk)
+{
+	int min_index;
+	int min_pos;
 
 	while (stk->a)
 	{
+		give_index(stk->a);
 		fin_min_index_pos(stk->a, &min_index, &min_pos);
-		move_to_top(&stk->a, min_pos);//stk bir pointer ve onun adresini alırsak pointer to pointer oluyor aslında bu nedenle & kullanıyoruz çünkü orjinalde değişiklik yapmak isterotti ve bu fonksiyon bulduğumuz minimum değerimizi head stacke atar
+		move_to_top(stk, min_pos);
 		pb(stk);
 	}
-
 	while (stk->b)
 		pa(stk);
 }
-
-void	move_to_top();
