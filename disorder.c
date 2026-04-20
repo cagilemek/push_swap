@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:19:00 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/14 05:50:33 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/20 23:43:04 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void strategy_selector(t_stack *stacks)
 	if (rate < 0.2)
 		simple(stacks);
 	else if (rate < 0.5)
-		sort_medium(stacks);
+		chunk_base(stacks);
 	else
 		sort_large(stacks);
 }

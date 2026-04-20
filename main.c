@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/14 05:50:30 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/20 23:29:04 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int main(int argc, char **argv)
 	stacks->b = NULL;
 	split = NULL;
 	i = 1;
+
 	init_counts(stacks); // tüm işlem sayaclarını baslatır
-	while (i < argc)	 // bütün argümanları gez PARSİNG
+	while (argv[i])		 // bütün argümanları gez PARSİNG
 	{
 		if (argv[i][0] == '-' && argv[i][1] == '-') // flag kontrolü
 			parse_flag(stacks, argv[i], split);
@@ -66,21 +67,18 @@ int main(int argc, char **argv)
 		}
 		i++;
 	}
+	stacks->disorder = disorder(stacks->a);
 	give_index(stacks->a);
 	if (!stacks->a)			  // (  ./program " "  ) verilirse split null oluyor ve isvalid çağırılmıyor döngüye girmiyor stack bos ise kontrolü
 		error(stacks, split); // is order dan önce gerekli yoksa bos liste hatalı davranısa yol açıyor
 	if (is_order(stacks->a))  // zaten sıralı mı ?
-	{
 		cleanup(stacks, split);
-		return (0);
-	}
-	if (calculate_stack_size(stacks->a) == 2)
-	{
-		if (!is_order(stacks->a))
-			sa(stacks);
-	}
-	else
-		simple(stacks);
+
+	chunk_base(stacks);
+	if (stacks->bench)
+		bench_press(stacks, stacks->disorder);
+
+	// strategy_selector(stacks);
 	cleanup(stacks, split);
 	return (0);
 }

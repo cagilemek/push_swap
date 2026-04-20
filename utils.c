@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 01:54:20 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/13 22:30:44 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/20 20:31:53 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,10 +218,11 @@ int	is_order(t_list *a)
 	return (1);
 }
 
-void	cleanup(t_stack *stacks, char **split)
+int	cleanup(t_stack *stacks, char **split)
 {
 	free_split(split);
 	free_list(stacks->a);
 	free_list(stacks->b);
 	free(stacks);
+	return (0);
 }

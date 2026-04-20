@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 05:28:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/14 05:49:23 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/15 15:27:16 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	fin_min_index_pos(t_list *a, int *min_index, int *min_pos)
 
 void	smart_rotate(t_stack *stk, int max_index)
 {
-	if (find_position(stk->b, max_index) <= calculate_stack_size(stk->b) / 2)
+	if (find_max_index_pos(stk->b, max_index) <= calculate_stack_size(stk->b) / 2)
 		rb(stk);
 	else
 		rrb(stk);
