@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/14 05:45:37 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/15 17:09:11 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ int		calculate_stack_size(t_list *stack);
 int		calculate_chunk_size(int stack_size);
 int		find_max_index_pos(t_list *b, int max_index);
 void	smart_rotate(t_stack *stk, int max_index);
+
+void	bench_press(t_stack *s);
+void	print_line(char *name, int value);
+int		ft_strlen(char *str);
+void	ft_putnbr_fd(int value, int fd);
 
 void	sa(t_stack *stk);
 void	sb(t_stack *stk);

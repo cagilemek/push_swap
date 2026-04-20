@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/14 05:50:30 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/15 16:42:08 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ int	main(int argc, char **argv)
 		cleanup(stacks, split);
 		return (0);
 	}
-	strategy_selector(stacks);
+	chunk_base(stacks);
+	if (stacks->bench)
+		bench_press(stacks);
+	// strategy_selector(stacks);
 	cleanup(stacks, split);
 	return (0);
 }
