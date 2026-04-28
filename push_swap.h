@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/20 23:35:26 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/28 14:54:38 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "printf.h"
 
 typedef struct s_list
 {
@@ -85,9 +84,14 @@ int calculate_chunk_size(int stack_size);
 int find_max_index_pos(t_list *b, int max_index);
 void smart_rotate(t_stack *stk, int max_index);
 
-void bench_press(t_stack *s, float f);
-int ft_printf(const char *format, ...);
-void disorder_to_integer(int *integer, float *flo, int *decimal, float f);
+void	bench_press(t_stack *s, float f);
+void	disorder_to_integer(int *integer, float f, int *decimal);
+void	putstr_fd(char *str, int fd);
+void	putnbr_fd(int n, int fd);
+void	write_disorder(int integer, int decimal);
+void	write_total(int total);
+void	write_sa(t_stack *a);
+void	write_ra(t_stack *a);
 
 void sa(t_stack *stk);
 void sb(t_stack *stk);

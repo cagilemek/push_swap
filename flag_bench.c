@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:35:33 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/20 23:46:09 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/28 14:54:51 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,35 @@ void	bench_press(t_stack *s, float f)
 	if (!s->bench)
 		return ;
 	int		integer;
-	float	flo;
 	int		decimal;
 
-	disorder_to_integer(&integer, &flo, &decimal, f);
+	write(1, "\033[2J\033[3J\033[H", 11);
+	disorder_to_integer(&integer, f, &decimal);
+	write_disorder(integer, decimal);
+	write_total(s->count.total);
+	write_sa(s);
+	write_ra(s);
 	
-	ft_printf("[bench] disorder: %d.%d%%\n",integer, decimal);
-	ft_printf("[bench] total_ops: %d\n",s->count.total);
-	ft_printf("[bench] strategy:\n");
-	ft_printf("[bench] sa: %d sb: %d ss: %d\n", s->count.sa, s->count.sb, s->count.ss);
-	ft_printf("[bench] pa: %d pb: %d\n", s->count.pa, s->count.pb);
-	ft_printf("[bench] ra: %d rb: %d rr: %d\n", s->count.ra, s->count.rb, s->count.rr);
-	ft_printf("[bench] rra: %d rrb: %d rrr: %d\n", s->count.rra, s->count.rrb, s->count.rrr);
-	
-
 }
 
-void disorder_to_integer(int *integer, float *flo, int *decimal, float f)
+void	putstr_fd(char *str, int fd)
+{
+	while (*str)
+		write(fd, str++, 1);
+}
+
+void	putnbr_fd(int n, int fd)
+{
+	char	c;
+
+	if (n >= 10)
+		putnbr_fd(n / 10, fd);
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
+}
+
+void disorder_to_integer(int *integer, float f, int *decimal)
 {
 	*integer = 100 * f;//float sayının ilk 2 kısmı 49.12 (49)
-	*flo = 100 * f;//flo tüm sayıyı tutuyor 49.12
-	*decimal = (*flo - *integer) * 100;//float sayının diger 2 kısmı 49.12 (12)
+	*decimal = ((f * 100) - *integer) * 100;//float sayının diger 2 kısmı 49.12 (12)
 }
