@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:33:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 15:33:55 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/28 18:46:54 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,16 @@ void	give_index(t_list *a)
 	}
 }
 
-int	is_order(t_list *a)
+void	free_list(t_list *lst)
 {
-	while (a && a->next)
+	t_list	*tmp;
+
+	while (lst)
 	{
-		if (a->value > a->next->value)
-			return (0);
-		a = a->next;
+		tmp = lst->next;
+		free(lst);
+		lst = tmp;
 	}
-	return (1);
 }
 
 int	cleanup(t_stack *stacks, char **split)

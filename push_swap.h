@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 15:42:56 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:04:35 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		is_order(t_list *a);
 long	ft_atol(const char *nptr);
 float	disorder(t_list *head);
 t_list	*new_node(int value);
+void	free_list(t_list *lst);
 
 // #chunk base#
 void	chunk_base(t_stack *stk);
@@ -104,5 +105,7 @@ void	rr(t_stack *stk);
 void	rra(t_stack *stk);
 void	rrb(t_stack *stk);
 void	rrr(t_stack *stk);
+
+void	parse_arg(char **argv, t_stack *stacks, char **split);
 
 #endif

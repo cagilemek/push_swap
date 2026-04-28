@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   utils_1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:31:12 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 15:32:33 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/04/28 19:28:56 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,15 @@ void	free_split(char **split)
 	free(split);
 }
 
-void	free_list(t_list *lst)
+int	is_order(t_list *a)
 {
-	t_list	*tmp;
-
-	while (lst)
+	while (a && a->next)
 	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
 	}
+	return (1);
 }
 
 t_list	*new_node(int value)
