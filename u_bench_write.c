@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_bench.c                                      :+:      :+:    :+:   */
+/*   u_bench_write.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:33:50 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 14:54:32 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 00:55:15 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	write_disorder(int integer, int decimal)
 
 void	write_total(int total)
 {
-	putstr_fd("[bench] totall_ops: ", 2);
+	putstr_fd("[bench] total_ops: ", 2);
 	putnbr_fd(total, 2);
 	putstr_fd("\n",2);
 }
