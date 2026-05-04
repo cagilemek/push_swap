@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv)
 {
-	t_stack	*stacks;
-	char	**split;
-	
+	t_stack *stacks;
+	char **split;
+
 	split = NULL;
 	if (argc == 1)
 		return (0);
@@ -26,13 +26,13 @@ int main(int argc, char **argv)
 	init_counts(stacks); // tüm işlem sayaclarını baslatır
 	parse_arg(argv, stacks, split);
 	stacks->disorder = disorder(stacks->a);
-	give_index(stacks->a);
+	// give_index(stacks->a);	  // ben radixin içine entegre ettim bunu bence kaldıralım o yüzden
 	if (!stacks->a)			  // (  ./program " "  ) verilirse split null oluyor ve isvalid çağırılmıyor döngüye girmiyor stack bos ise kontrolü
 		error(stacks, split); // is order dan önce gerekli yoksa bos liste hatalı davranısa yol açıyor
 	if (is_order(stacks->a))  // zaten sıralı mı ?
 	{
 		cleanup(stacks, split);
-		return (0);//double free olmasın diye cleanup da free var
+		return (0); // double free olmasın diye cleanup da free var
 	}
 	chunk_base(stacks);
 	// strategy_selector(stacks);
