@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils_0.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/31 01:54:20 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 15:34:02 by mucelep          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   utils_0.c                                         :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/03/31 01:54:20 by username         #+#    #+#              */
+/*   Updated: 2026/05/07 02:49:24 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,35 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
-			return ((char *)s);
+		if ((unsigned char) * s == (unsigned char) c)
+			return ((char *) s);
 		s++;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
+	if ((unsigned char) c == '\0')
+		return ((char *) s);
 	return (NULL);
 }
 
-int	is_valid(char *number)//geçerli bir sayi mi
+int	is_valid(char *number) //geçerli bir sayi mi
 {
-	if (!*number)//"" " " bos string için
+	int	len;
+
+	len = 0;
+	if (!*number) //"" " " bos string için
 		return (0);
 	if (*number == '+' || *number == '-')
 		number++;
-	if (!*number)// + veya - den sonra sayı yoksa diye kontrol
+	if (!*number) // + veya - den sonra sayı yoksa diye kontrol
 		return (0);
 	while (*number)
 	{
 		if (*number < '0' || *number > '9')
 			return (0);
+		len++;
 		number++;
 	}
+	if (len > 10)
+		return (0);
 	return (1);
 }
 
@@ -84,7 +90,7 @@ long	ft_atol(const char *nptr)
 	return (r * s);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)// split için
+void	*ft_memcpy(void *dest, const void *src, size_t n) // split için
 {
 	size_t	i;
 
@@ -93,7 +99,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)// split için
 		return (dest);
 	while (i < n)
 	{
-		((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
+		((unsigned char *) dest)[i] = ((const unsigned char *) src)[i];
 		i++;
 	}
 	return (dest);
