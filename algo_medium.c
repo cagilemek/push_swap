@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_base.c                                       :+:      :+:    :+:   */
+/*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:37:25 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/20 20:29:42 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 06:42:20 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	chunk_base(t_stack *stk)
 {
 	int	stk_size; // stackin eleman sayısı
-	int	chunk_size;// chunk un boyutu = n kök n
+	int	chunk_size;// chunk un boyutu = n kök n 
 	int	last_chunk; // son chunk ı tutuyor pull chunk için
 
 	stk_size = calculate_stack_size(stk->a);

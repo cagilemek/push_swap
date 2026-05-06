@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 20:37:07 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/20 23:35:26 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 06:48:39 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,20 @@ void smart_rotate(t_stack *stk, int max_index);
 
 void bench_press(t_stack *s, float f);
 int ft_printf(const char *format, ...);
-void disorder_to_integer(int *integer, float *flo, int *decimal, float f);
+void disorder_to_integer(int *integer, float flo, int *decimal);
 
 void radix_sort(t_stack *stk);
+void simple(t_stack *stk);
+void	parse_arg(char **argv, t_stack *stacks, char **split);
+void	putstr_fd(char *str, int fd);
+void	putnbr_fd(int n, int fd);
+void	write_disorder(int integer, int decimal);
+void	write_total(int total);
+void	write_sa(t_stack *a);
+void	write_ra(t_stack *a);
+void	free_list(t_list *lst);
+void	write_strategy(t_stack *stk);
+
 
 void sa(t_stack *stk);
 void sb(t_stack *stk);

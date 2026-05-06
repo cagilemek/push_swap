@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 02:17:48 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/28 19:31:31 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 14:43:15 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	init_counts(stacks); // tüm işlem sayaclarını baslatır
 	parse_arg(argv, stacks, split);
 	stacks->disorder = disorder(stacks->a);
-	// give_index(stacks->a);	  // ben radixin içine entegre ettim bunu bence kaldıralım o yüzden
+	give_index(stacks->a);	  // ben radixin içine entegre ettim bunu bence kaldıralım o yüzden
 	if (!stacks->a)			  // (  ./program " "  ) verilirse split null oluyor ve isvalid çağırılmıyor döngüye girmiyor stack bos ise kontrolü
 		error(stacks, split); // is order dan önce gerekli yoksa bos liste hatalı davranısa yol açıyor
 	if (is_order(stacks->a))  // zaten sıralı mı ?
@@ -34,8 +34,7 @@ int main(int argc, char **argv)
 		cleanup(stacks, split);
 		return (0); // double free olmasın diye cleanup da free var
 	}
-	chunk_base(stacks);
-	// strategy_selector(stacks);
+	strategy_selector(stacks);
 	if (stacks->bench)
 		bench_press(stacks, stacks->disorder);
 	cleanup(stacks, split);

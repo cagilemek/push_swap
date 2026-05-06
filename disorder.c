@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:19:00 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/20 23:43:04 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 07:01:06 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,21 @@ float disorder(t_list *head)
 	return (mistakes / total_pairs); // burda oranı buluyoruz önce küçük sayı oldugu için 1 den düşük cıkıyor ör 1/2 = 0.5
 }
 
-void strategy_selector(t_stack *stacks)
+void	strategy_selector(t_stack *stacks)
 {
-	float rate;
-
-	rate = disorder(stacks->a); // SADECE A YA BAKIYORUZ ANLAMADIM KAFAM ÇOK KARIŞTI B YE DE BAKMAMIZ GEREKMEZ Mİ BİLMİYORUM İMDAT
-	if (rate < 0.2)
+	if (stacks->flag == 1)
 		simple(stacks);
-	else if (rate < 0.5)
+	else if (stacks->flag == 2)
 		chunk_base(stacks);
-	else
+	else if (stacks->flag == 3)
 		radix_sort(stacks);
+	else
+	{
+		if (stacks->disorder < 0.2)
+			simple(stacks);
+		else if (stacks->disorder < 0.5)
+			chunk_base(stacks);
+		else
+			radix_sort(stacks);
+	}
 }

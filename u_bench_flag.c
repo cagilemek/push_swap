@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_bench.c                                       :+:      :+:    :+:   */
+/*   u_bench_flag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:35:33 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 14:54:51 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/05 07:19:25 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	bench_press(t_stack *s, float f)
 	int		integer;
 	int		decimal;
 
-	write(1, "\033[2J\033[3J\033[H", 11);
+	//write(1, "\033[2J\033[3J\033[H", 11);
 	disorder_to_integer(&integer, f, &decimal);
 	write_disorder(integer, decimal);
+	write_strategy(s);
 	write_total(s->count.total);
 	write_sa(s);
 	write_ra(s);
