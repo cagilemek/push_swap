@@ -6,12 +6,12 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 05:28:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 19:53:35 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:58:31 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//listedeki en yüksek indexin nerede oldugunu buluyor
+
 int	find_max_index_pos(t_list *b, int max_index)
 {
 	int	i;
@@ -19,12 +19,12 @@ int	find_max_index_pos(t_list *b, int max_index)
 	i = 0;
 	while (b)
 	{
-		if (b->index == max_index)// max index i arıyor
-			return (i);//buldugunda kaçıncı sırada oldugunu return ediyor
+		if (b->index == max_index)
+			return (i);
 		i++;
 		b = b->next;
 	}
-	return (i);//güvenlik için var
+	return (i);
 }
 void	fin_min_index_pos(t_list *a, int *min_index, int *min_pos)
 {
