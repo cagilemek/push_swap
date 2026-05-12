@@ -6,12 +6,12 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 05:28:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 20:06:10 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 20:16:01 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//listedeki en yüksek indexin nerede oldugunu buluyor
+
 int	find_max_index_pos(t_list *b, int max_index)
 {
 	int	i;
@@ -19,32 +19,31 @@ int	find_max_index_pos(t_list *b, int max_index)
 	i = 0;
 	while (b)
 	{
-		if (b->index == max_index)// max index i arıyor
-			return (i);//buldugunda kaçıncı sırada oldugunu return ediyor
+		if (b->index == max_index)
+			return (i);
 		i++;
 		b = b->next;
 	}
-	return (i);//güvenlik için var
+	return (i);
 }
-void	fin_min_index_pos(t_list *a, int *min_index, int *min_pos)
+
+void	fin_min_index_pos(t_list *a, int *min_index, int *min_pos_index)
 {
-	t_list	*current = a;
+	t_list	*current;
 	int		i;
 
 	i = 0;
-
+	current = a;
 	if (!current)
-		return;
-
+		return ;
 	*min_index = current->index;
-	*min_pos = 0; // min_pos stack a içindeki en küçük index in pozisyonunu tutar
-	
+	*min_pos_index = 0;
 	while (current)
 	{
 		if (current->index < *min_index)
 		{
 			*min_index = current->index;
-			*min_pos = i;
+			*min_pos_index = i;
 		}
 		current = current->next;
 		i++;

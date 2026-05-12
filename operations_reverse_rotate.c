@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:41:18 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/13 22:23:25 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 20:24:40 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 static int	rr_helper(t_list **stack)
 {
 	t_list	*tmp;
-	t_list	*last;
+	t_list	*lastonce;
 
 	if (!*stack || !(*stack)->next)
 		return (0);
-	last = NULL; //gerek yok cunku üstte tek elemanlı olup olmadıgı kontrol ediliyor  sadece güvenlik alıskanlıgı
-	tmp = *stack; // orjinal listenin başını tmp de tut
+	lastonce = NULL;
+	tmp = *stack;
 	while (tmp->next)
 	{
-		last = tmp; // last ta orjinal listenin sondan bir önceki elemanını tut
-		tmp = tmp->next; //tmp de orjinal listenin sonunu tut
+		lastonce = tmp;
+		tmp = tmp->next;
 	}
-	(*last).next = NULL; // orjinal listenin son elemanını null yap // liste tek elemanlı olsaydı döngüye girmez ve rastgele bir degerin nextini null yapmaya calısırdı ve segfault o yüzden üstte null var 
-	tmp->next = *stack; //tmp i yani listenin son elemanını sonu silinmiş liste ile birleştir
-	*stack = tmp; // tmp i orjinal listeye at ve liste 3 2 1 olsun
+	lastonce->next = NULL;
+	tmp->next = *stack;
+	*stack = tmp;
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:35:33 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 19:30:24 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 20:16:48 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	bench_press(t_stack *s, float f)
 {
-	if (!s->bench)
-		return ;
 	int		integer;
 	int		decimal;
 
-	//write(1, "\033[2J\033[3J\033[H", 11);
+	if (!s->bench)
+		return ;
 	disorder_to_integer(&integer, f, &decimal);
 	write_disorder(integer, decimal);
 	write_strategy(s);
 	write_total(s->count.total);
 	write_sa(s);
 	write_ra(s);
-	
 }
 
 void	putstr_fd(char *str, int fd)
@@ -45,8 +43,8 @@ void	putnbr_fd(int n, int fd)
 	write(fd, &c, 1);
 }
 
-void disorder_to_integer(int *integer, float f, int *decimal)
+void	disorder_to_integer(int *integer, float f, int *decimal)
 {
-	*integer = 100 * f;//float sayının ilk 2 kısmı 49.12 (49)
-	*decimal = ((f * 100) - *integer) * 100;//float sayının diger 2 kısmı 49.12 (12)
+	*integer = 100 * f;
+	*decimal = ((f * 100) - *integer) * 100;
 }

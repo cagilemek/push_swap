@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 18:37:57 by username          #+#    #+#             */
-/*   Updated: 2026/05/12 19:30:10 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 20:50:18 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,56 +33,22 @@ void	three(t_stack *s)
 	one = s->a->index;
 	two = s->a->next->index;
 	three = s->a->next->next->index;
-	if (one > two && two < three && one < three) // [1, 0, 2] → sa
+	if (one > two && two < three && one < three)
 		sa(s);
 	else if (one > two && two > three)
 	{
 		sa(s);
 		rra(s);
 	}
-	else if (one > two && two < three && one > three) // [2, 0, 1] → rra
+	else if (one > two && two < three && one > three)
 		ra(s);
-	else if (one < two && two > three && one < three) // [0, 2, 1] → ra + sa
+	else if (one < two && two > three && one < three)
 	{
 		rra(s);
 		sa(s);
 	}
-	else if (one < two && two > three && one > three) // [1, 2, 0] → rra + sa
+	else if (one < two && two > three && one > three)
 		rra(s);
-	return ;
-}
-
-void	sort_mini(t_stack *s)
-{
-	int	i;
-	int	size;
-
-	i = 0;
-	size = calculate_stack_size(s->a);
-	if (size <= 2)
-		two(s);
-	else if (size <= 3)
-		three(s);
-	else if (size > 3 && size < 6)
-	{
-		while (i < 2)
-		{
-			give_index(s->a);
-			min_push_b(s);
-			i++;
-		}
-		size = calculate_stack_size(s->a);
-		// kaç eleman kaldı?
-		if (size == 2)
-			two(s);
-		else if (size == 3)
-			three(s);
-		while (i > 0)
-		{
-			pa(s);
-			i--;
-		}
-	}
 	return ;
 }
 
@@ -92,4 +58,35 @@ void	min_push_b(t_stack *s)
 		ra(s);
 	pb(s);
 	return ;
+}
+
+static void	sort_small(t_stack *s)
+{
+	int	size;
+
+	size = calculate_stack_size(s->a);
+	if (size == 2)
+		two(s);
+	else if (size == 3)
+		three(s);
+}
+
+void	sort_mini(t_stack *s)
+{
+	int	i;
+	int	size;
+
+	size = calculate_stack_size(s->a);
+	if (size <= 3)
+		return (sort_small(s));
+	i = 0;
+	while (i < 2)
+	{
+		give_index(s->a);
+		min_push_b(s);
+		i++;
+	}
+	sort_small(s);
+	while (i--)
+		pa(s);
 }
