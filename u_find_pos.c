@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 05:28:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 19:31:26 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:53:35 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	smart_rotate(t_stack *stk, int max_index)
 	if (size == 0)
 		return ;
 	pos = find_max_index_pos(stk->b, max_index);
-	if (pos == size)  // bulunamadı
-		return ;
 	if (pos <= size / 2)
 		rb(stk);
 	else

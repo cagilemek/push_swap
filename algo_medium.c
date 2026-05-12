@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:37:25 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 19:24:48 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:54:26 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,85 +14,85 @@
 
 void	chunk_base(t_stack *stk)
 {
-	int	stk_size; // stackin eleman sayısı
-	int	chunk_size;// chunk un boyutu = n kök n 
-	int	last_chunk; // son chunk ı tutuyor pull chunk için
+	int	stk_size;
+	int	chunk_size;
+	int	last_chunk;
 
 	stk_size = calculate_stack_size(stk->a);
 	chunk_size = calculate_chunk_size(stk_size);
 	last_chunk = push_chunk(stk, stk_size, chunk_size);
 	pull_chunk(stk, stk_size, chunk_size, last_chunk);
 }
-//inputları chunklara ayırarak b stackine sıralıyor ama chunklar içinde sayılar sıralı olmuyor
+
 int	push_chunk(t_stack *stk, int stack_size, int chunk_size)
 {
-	int	chunk;//chunklarınmız
-	int	push;// push sayısı cunk a chunksize kadar eleman atsın taşmasın diye
+	int	witch_chunk;
+	int	push;
 
-	chunk = 0;
-	while (chunk * chunk_size < stack_size)// ör. 0 * 3 < 9 - yeteri kadar chunk olmasını sağlıyor
+	witch_chunk = 0;
+	while (witch_chunk * chunk_size < stack_size)
 	{
 		push = 0;
-		while (push < chunk_size && stk->a)// a biterse yada chunk dolarsa
+		while (push < chunk_size && stk->a)
 		{
-			if (stk->a->index >= chunk * chunk_size// chunk a giricek index alt tabanı ör 0 * 3 = 0. indexten büyük yada eşitse
-				&& stk->a->index < (chunk + 1) * chunk_size)// chunk a giricek index üst tabanı ör (0 + 1) * 3 = 3. indexten küçük 
+			if (stk->a->index >= witch_chunk * chunk_size
+				&& stk->a->index < (witch_chunk + 1) * chunk_size)
 			{
-				pb(stk);//chunk a uyanları b ye at
+				pb(stk);
 				push++;
 			}
 			else
-				ra(stk);//chunk a uymuyorsa kaydır
+				ra(stk);
 		}
-		chunk++;//chunk dolunca 1 arttır
+		witch_chunk++;
 	}
-	return (chunk - 1);//en sonda fazladan 1 arttırıp döngüye girmedigi için geçersiz chunk u eksiltiyoruz
+	return (witch_chunk - 1);
 }
-//chunkların içini sıralayarak geri a ya atıyor en yüksek chunk'ın en yüksek indexinden küçüğe doğru a ya atıyoruz
+
 void	pull_chunk(t_stack *stk, int stack_size, int chunk_size, int last_chunk)
 {
-	int	max_index;// en yükek index i tutucak
+	int	max_index;
 	int	push;
 
 	push = 0;
 	max_index = stack_size - 1;
-	while (last_chunk >= 0)// en yüksek chunktan geriye dogru gidiyoruz
+	while (last_chunk >= 0)
 	{
 		push = 0;
-		while (push < chunk_size && stk->b)//chunk bittiyse yada stack bittiyse
+		while (push < chunk_size && stk->b)
 		{
-			if (stk->b->index == max_index)//en yüksek sayıysa a ya at
+			if (stk->b->index == max_index)
 			{
 				pa(stk);
 				max_index--;
 				push++;
 			}
-			else//degilse sırayı kaydır
+			else
 				smart_rotate(stk, max_index);
 		}
-		last_chunk--;//bir alt chunk
+		last_chunk--;
 	}
 }
 
-int	calculate_stack_size(t_list *stack)//a listesinin kaç elemanlı oldugunu hesaplıyor
+int	calculate_stack_size(t_list *stack)
 {
-	int	stack_size;// a listesinin boyutunu tutucak
+	int	stack_size;
 
 	stack_size = 0;
 	while (stack)
 	{
-		stack = stack->next;//listenin sonuna kadar gidiyor
-		stack_size++;//her seferinde size i 1 arttiriyor
+		stack = stack->next;
+		stack_size++;
 	}
 	return (stack_size);
 }
 
-int	calculate_chunk_size(int stack_size)//chunk boyutunu hesapla n kök n
+int	calculate_chunk_size(int stack_size)
 {
-	int	i;//chunk sayısını tutucak
+	int	i;
 
-	i = 1; //çünkü 0 * 0 == 0
-	while (i * i < stack_size)// 1*1 < 10? ..... 4*4 < 10?
+	i = 1;
+	while (i * i < stack_size)
 		i++;
 	return (i);
 }
