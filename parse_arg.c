@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   parse_arg.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/04/28 18:57:35 by username         #+#    #+#              */
-/*   Updated: 2026/05/07 02:49:18 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   parse_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/28 18:57:35 by username          #+#    #+#             */
+/*   Updated: 2026/05/12 17:33:03 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	parse_arg(char **argv, t_stack *stacks, char **split)
 		else if (ft_strchr(argv[i], ' ')) // 1. argümanda bosluk var mı diye kontrol et yani "" içinde mi
 			parse_multiple(argv, stacks, split, i);
 		else // argüman tırnak içinde degilse
-		parse_single(argv, stacks, split, i);
+			parse_single(argv, stacks, split, i);
 		i++;
 	}
 }
