@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/03/30 20:37:07 by username         #+#    #+#              */
-/*   Updated: 2026/05/07 02:49:05 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/30 20:37:07 by username          #+#    #+#             */
+/*   Updated: 2026/05/12 19:29:37 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,9 @@ typedef struct s_stack
 	t_list	*b;
 	t_count	count;
 	float	disorder;
-	// karışıklık ornaını tutuyor ör. 0.42
-	int	bench;
-	int	flag;
-	int	flagset;
-	// birden fazla flag girilmesin diye
+	int		bench;
+	int		flag;
+	int		flagset;
 }	t_stack;
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -80,7 +78,8 @@ void	fin_min_index_pos(t_list *a, int *min_index, int *min_pos);
 // chunk base
 void	chunk_base(t_stack *stk);
 int		push_chunk(t_stack *stk, int stack_size, int chunk_size);
-void	pull_chunk(t_stack *stk, int stack_size, int chunk_size, int last_chunk);
+void	pull_chunk(t_stack *stk, int stack_size,
+			int chunk_size, int last_chunk);
 int		calculate_stack_size(t_list *stack);
 int		calculate_chunk_size(int stack_size);
 int		find_max_index_pos(t_list *b, int max_index);

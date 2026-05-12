@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 18:55:43 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/20 20:46:14 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:28:44 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	parse_flag(t_stack *stacks, char *argv, char **split)
 		stacks->flag = 0;
 	else if (!ft_strcmp(argv, "--bench"))
 	{
-		if (stacks->bench)// zaten --bench girilmiş 2. girilmesin diye
+		if (stacks->bench)
 			error(stacks, split);
 		stacks->bench = 1;
 		return ;

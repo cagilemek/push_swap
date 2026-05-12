@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   utils_0.c                                         :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/03/31 01:54:20 by username         #+#    #+#              */
-/*   Updated: 2026/05/07 02:49:24 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   utils_0.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/31 01:54:20 by username          #+#    #+#             */
+/*   Updated: 2026/05/12 19:32:29 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if ((unsigned char) * s == (unsigned char) c)
-			return ((char *) s);
+		if ((unsigned char) *s == (unsigned char) c)
+			return ((char *)s);
 		s++;
 	}
 	if ((unsigned char) c == '\0')
@@ -42,16 +42,16 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int	is_valid(char *number) //geçerli bir sayi mi
+int	is_valid(char *number)
 {
 	int	len;
 
 	len = 0;
-	if (!*number) //"" " " bos string için
+	if (!*number)
 		return (0);
 	if (*number == '+' || *number == '-')
 		number++;
-	if (!*number) // + veya - den sonra sayı yoksa diye kontrol
+	if (!*number)
 		return (0);
 	while (*number)
 	{

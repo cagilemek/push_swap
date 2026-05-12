@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ckurtul <ckurtul@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 20:37:25 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/06 19:34:40 by ckurtul          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:24:48 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

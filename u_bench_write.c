@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:33:50 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/05 07:03:29 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:31:10 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	write_disorder(int integer, int decimal)
 {
 	putstr_fd("[bench] disorder: ", 2);
-	putnbr_fd(integer,2);
-	putstr_fd(".",2);
-	putnbr_fd(decimal,2);
-	putstr_fd("%\n",2);
+	putnbr_fd(integer, 2);
+	putstr_fd(".", 2);
+	putnbr_fd(decimal, 2);
+	putstr_fd("%\n", 2);
 }
 
 void	write_total(int total)
 {
 	putstr_fd("[bench] total_ops: ", 2);
 	putnbr_fd(total, 2);
-	putstr_fd("\n",2);
+	putstr_fd("\n", 2);
 }
 
 void	write_strategy(t_stack *stk)
@@ -63,7 +63,7 @@ void	write_sa(t_stack *a)
 	putnbr_fd(a->count.pa, 2);
 	putstr_fd("	pb: ", 2);
 	putnbr_fd(a->count.pb, 2);
-	putstr_fd("\n",2);
+	putstr_fd("\n", 2);
 }
 
 void	write_ra(t_stack *a)
@@ -80,5 +80,5 @@ void	write_ra(t_stack *a)
 	putnbr_fd(a->count.rrb, 2);
 	putstr_fd("	rrr: ", 2);
 	putnbr_fd(a->count.rrr, 2);
-	putstr_fd("\n",2);
+	putstr_fd("\n", 2);
 }

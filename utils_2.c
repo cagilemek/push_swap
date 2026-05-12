@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:33:15 by mucelep           #+#    #+#             */
-/*   Updated: 2026/04/28 18:46:54 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:34:04 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	is_duplicate(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->next;
-		while (tmp)//listenin ilk elemanı ile kalan tüm elemanları kaysılastır
+		while (tmp)
 		{
 			if (lst->value == tmp->value)
 				return (1);
 			tmp = tmp->next;
 		}
-		lst = lst->next;//listenin 2. elemanına geç
+		lst = lst->next;
 	}
 	return (0);
 }

@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo_simple.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 19:25:03 by mucelep           #+#    #+#             */
+/*   Updated: 2026/05/12 19:25:29 by mucelep          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-void move_to_top(t_stack *stk, int pos)
+void	move_to_top(t_stack *stk, int pos)
 {
-	int size;
+	int	size;
 
 	if (pos < 0)
-		return;
+		return ;
 	size = calculate_stack_size(stk->a);
 	if (pos <= size / 2)
 	{
@@ -27,10 +38,10 @@ void move_to_top(t_stack *stk, int pos)
 	}
 }
 
-void simple(t_stack *stk)
+void	simple(t_stack *stk)
 {
-	int min_index;
-	int min_pos;
+	int	min_index;
+	int	min_pos;
 
 	while (stk->a)
 	{

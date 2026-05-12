@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 00:38:37 by ckurtul           #+#    #+#             */
-/*   Updated: 2026/04/13 22:24:21 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/12 19:27:23 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ void	ss(t_stack *stk)
 	s(&stk->a);
 	s(&stk->b);
 	write(1, "ss\n", 3);
-	stk->count.ss++;//BURAYI TARTIŞIN BENCE DOĞRU -Ç
+	stk->count.ss++;
 	stk->count.total++;
 }
