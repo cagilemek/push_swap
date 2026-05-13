@@ -6,7 +6,7 @@
 /*   By: mucelep <mucelep@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:33:50 by mucelep           #+#    #+#             */
-/*   Updated: 2026/05/12 19:31:10 by mucelep          ###   ########.fr       */
+/*   Updated: 2026/05/13 18:28:20 by mucelep          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	write_strategy(t_stack *stk)
 		if (stk->disorder < 0.2)
 			putstr_fd("simple (O(n^2))\n", 2);
 		else if (stk->disorder < 0.5)
-			putstr_fd("mid (O(n\xe2\x88\x9an))\n", 2);
+			putstr_fd("medium (O(n√n))\n", 2);
 		else
 			putstr_fd("complex (O(n*log(n)))\n", 2);
 	}
